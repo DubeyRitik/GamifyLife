@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+.modal {
+  background-color: blueviolet;
+
+  border: 3px solid #73ad21;
+}

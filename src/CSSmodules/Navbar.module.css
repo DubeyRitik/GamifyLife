@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+.nav {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(151, 234, 143);
+}
+
+.navleft span {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 10px;
+  margin: 20px;
+}
+
+.navright a {
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navright {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.navlinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+img {
+  width: 30px;
+}

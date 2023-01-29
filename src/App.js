@@ -1,23 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import Home from "./Components/Home";
+import Navbar from "./Components/Navbar";
+import Store from "./Components/Store";
+function App(props) {
+  const [coins, setCoins] = useState(() => {
+    const storedCoins = localStorage.getItem("coins");
+    return storedCoins ? Number(storedCoins) : 0;
+  });
+  const [home, setShowHome] = useState(true);
+  const [store, setShowStore] = useState(false);
 
-function App() {
+  useEffect(() => {
+    const storedCoins = localStorage.getItem("coins");
+    if (storedCoins) {
+      setCoins(Number(storedCoins));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("coins", coins);
+  }, [coins]);
+
+  function handleIncCoins({ c, n }) {
+    setCoins((prevState) => Number(c) + Number(prevState));
+  }
+
+  function handleDec(c) {
+    if (Number(coins) < Number(c)) {
+      alert("Not Enough Coins, Work More");
+    } else {
+      setCoins((prevState) => Number(prevState) - Number(c));
+      alert("Enjoy your day!!!");
+    }
+  }
+
+  function displayHome() {
+    setShowHome(true);
+    setShowStore(false);
+  }
+
+  function displayStore() {
+    setShowStore(true);
+    setShowHome(false);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar
+        coins={coins}
+        displayHome={displayHome}
+        displayStore={displayStore}
+      ></Navbar>
+      {home && <Home handleInc={handleIncCoins} coins={coins}></Home>}
+      {store && <Store handleDec={handleDec}></Store>}
     </div>
   );
 }

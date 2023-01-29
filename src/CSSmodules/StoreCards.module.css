@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+.homecard {
+  background-color: aqua;
+}
+
+.cardsParent {
+  background-color: beige;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 2%;
+}

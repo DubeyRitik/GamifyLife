@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+.banner {
+  background-color: aquamarine;
+  height: 70%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bannerLeft {
+  background-color: aliceblue;
+  padding: 10%;
+  font-size: 30px;
+}
+
+.bannerRight {
+  background-color: rgb(123, 176, 158);
+}
+
+.data {
+  background-color: azure;
+  width: 40%;
+  height: 70%;
+  margin: auto;
+  margin-top: 10%;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+}
+
+.bottomData {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: beige;
+}
+
+.bottomData div {
+  background-color: aqua;
+  margin: 10px;
+  /* padding: 20%; */
+  border: 2px solid #333333;
+  border-radius: 5px;
+  /* text styles */
+  color: #333;
+  /* font-size: 20px; */
+  text-align: center;
+}
+
+.fourDiv h6 {
+  /* background-color: aquamarine; */
+  margin: 0px;
+  margin-top: 2%;
+}
+
+.fourDiv h2 {
+  /* background-color: #826161; */
+  margin: 0px;
+  margin-top: 20%;
+}
+
+.coinData {
+  background-color: aquamarine;
+}
+
+.coinData h1 {
+  margin: 0;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.coinData h2 {
+  margin: 0;
+  text-align: center;
+}
